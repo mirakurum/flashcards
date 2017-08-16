@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Flashcards</title>
+    <title>Флэшкарточкер</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +9,17 @@
   </head>
 
   <body>
-    <%= yield %>
+  	<ul class="nav nav-tabs" style="background-color: #f0bfe9;">
+  		<li class="nav-item">
+    		<a class="nav-link navbar-brand active font-weight-bold" href="#">Флэшкарточкер</a>
+  		</li>
+  		<li class="nav-item">
+    		<a class="nav-link" href="#">Все карточки</a>
+  		</li>
+  		<li class="nav-item">
+    		<a class="nav-link" href="#">Добавить карточку</a>
+  		</li>
+  	</ul>
+  		<%= yield %>  	    
   </body>
 </html>
