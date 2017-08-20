@@ -1,0 +1,17 @@
+<%= form_for @card do |f| %>
+
+    <p>
+      <%= f.label 'Текст' %><br>
+      <%= f.text_field :original_text %>
+    </p>
+    <p>
+      <%= f.label 'Перевод' %><br>
+      <%= f.text_field :translated_text %>
+    </p>
+
+    <p>
+      <%= f.submit %>
+    </p>
+<% end %>
+
+<%= link_to 'Вернуться', cards_path %>
