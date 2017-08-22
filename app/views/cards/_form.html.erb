@@ -1,19 +1,11 @@
-<%= form_for @card do |f| %>
+<%= simple_form_for @card do |f| %>
 
-<%= render 'common/errors', resource: @card %>
+  <%= render 'common/errors', resource: @card %>
 
-    <p>
-      <%= f.label 'Текст' %><br>
-      <%= f.text_field :original_text %>
-    </p>
-    <p>
-      <%= f.label 'Перевод' %><br>
-      <%= f.text_field :translated_text %>
-    </p>
-
-    <p>
-      <%= f.submit %>
-    </p>
+<div class="col-md-6">
+  <%= f.input :original_text, label: 'Текст' %>
+  <%= f.input :translated_text, label: 'Перевод' %>
+  <%= f.button :submit %>
+  <%= link_to 'Вернуться', cards_path %>
 <% end %>
-
-<%= link_to 'Вернуться', cards_path %>
+</div>
