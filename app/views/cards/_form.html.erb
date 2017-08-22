@@ -1,5 +1,7 @@
 <%= form_for @card do |f| %>
 
+<%= render 'common/errors', resource: @card %>
+
     <p>
       <%= f.label 'Текст' %><br>
       <%= f.text_field :original_text %>
