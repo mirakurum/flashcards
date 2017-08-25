@@ -1,0 +1,11 @@
+<%= simple_form_for @card do |f| %>
+
+  <%= render 'common/errors', resource: @card %>
+
+<div class="col-md-6">
+  <%= f.input :original_text, label: 'Текст' %>
+  <%= f.input :translated_text, label: 'Перевод' %>
+  <%= f.button :submit, 'Сохранить' %>
+  <%= link_to 'Вернуться', cards_path %>
+<% end %>
+</div>
