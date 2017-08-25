@@ -2,7 +2,7 @@ class Card < ApplicationRecord
 
   validates :translated_text, :review_date, presence: true
   validates :original_text, presence: true, uniqueness: true
-  validates_with CheckNotEqualTextFieldsValidator
+  validates_with OriginalAndTranslatedTextFieldsNotEqualValidator
 
   before_validation :capitalize_fields_and_create_review_date
 
