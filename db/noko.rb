@@ -6,7 +6,7 @@ doc = Nokogiri::HTML(open(
 
 doc.xpath('//tr').each_with_index do |link, index|
   a = Nokogiri::HTML(link.to_s)
-    if index > 0
+    if index.positive?
       puts "Card.create(
            original_text: '#{a.css('td')[1].content}',
            translated_text: '#{a.css('td')[2].content}')"
