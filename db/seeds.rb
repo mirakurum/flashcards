@@ -5,7 +5,7 @@ doc = Nokogiri::HTML(open(
   "http://1000mostcommonwords.com/1000-most-common-russian-words/"))
 
 doc.xpath('//tr').each_with_index do |link, index|
-a = Nokogiri::HTML(link.to_s)
+  a = Nokogiri::HTML(link.to_s)
   if index.positive?
     Card.create(original_text: a.css('td')[1].content,
                 translated_text: a.css('td')[2].content)
